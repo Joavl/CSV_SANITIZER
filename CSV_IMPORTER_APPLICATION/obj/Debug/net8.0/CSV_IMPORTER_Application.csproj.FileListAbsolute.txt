@@ -1,0 +1,17 @@
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\bin\Debug\net8.0\CSV_IMPORTER_Application.deps.json
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\bin\Debug\net8.0\CSV_IMPORTER_Application.dll
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\bin\Debug\net8.0\CSV_IMPORTER_Application.pdb
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\bin\Debug\net8.0\CSV_IMPORTER.Domain.dll
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\bin\Debug\net8.0\CSV_IMPORTER.Infrastructure.dll
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\bin\Debug\net8.0\CSV_IMPORTER.Infrastructure.pdb
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\bin\Debug\net8.0\CSV_IMPORTER.Domain.pdb
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\obj\Debug\net8.0\CSV_IMPORTER_Application.csproj.AssemblyReference.cache
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\obj\Debug\net8.0\CSV_IMPORTER_Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\obj\Debug\net8.0\CSV_IMPORTER_Application.AssemblyInfoInputs.cache
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\obj\Debug\net8.0\CSV_IMPORTER_Application.AssemblyInfo.cs
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\obj\Debug\net8.0\CSV_IMPORTER_Application.csproj.CoreCompileInputs.cache
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\obj\Debug\net8.0\CSV_IMPO.0E8311B7.Up2Date
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\obj\Debug\net8.0\CSV_IMPORTER_Application.dll
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\obj\Debug\net8.0\refint\CSV_IMPORTER_Application.dll
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\obj\Debug\net8.0\CSV_IMPORTER_Application.pdb
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER_APPLICATION\obj\Debug\net8.0\ref\CSV_IMPORTER_Application.dll

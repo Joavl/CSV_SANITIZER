@@ -1,0 +1,11 @@
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Domain\bin\Debug\net8.0\CSV_IMPORTER.Domain.deps.json
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Domain\bin\Debug\net8.0\CSV_IMPORTER.Domain.dll
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Domain\bin\Debug\net8.0\CSV_IMPORTER.Domain.pdb
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Domain\obj\Debug\net8.0\CSV_IMPORTER.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Domain\obj\Debug\net8.0\CSV_IMPORTER.Domain.AssemblyInfoInputs.cache
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Domain\obj\Debug\net8.0\CSV_IMPORTER.Domain.AssemblyInfo.cs
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Domain\obj\Debug\net8.0\CSV_IMPORTER.Domain.csproj.CoreCompileInputs.cache
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Domain\obj\Debug\net8.0\CSV_IMPORTER.Domain.dll
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Domain\obj\Debug\net8.0\refint\CSV_IMPORTER.Domain.dll
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Domain\obj\Debug\net8.0\CSV_IMPORTER.Domain.pdb
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Domain\obj\Debug\net8.0\ref\CSV_IMPORTER.Domain.dll

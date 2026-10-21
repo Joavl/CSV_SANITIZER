@@ -1,0 +1,15 @@
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\bin\Debug\net8.0\CSV_IMPORTER.Infrastructure.deps.json
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\bin\Debug\net8.0\CSV_IMPORTER.Infrastructure.dll
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\bin\Debug\net8.0\CSV_IMPORTER.Infrastructure.pdb
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\bin\Debug\net8.0\CSV_IMPORTER.Domain.dll
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\bin\Debug\net8.0\CSV_IMPORTER.Domain.pdb
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\obj\Debug\net8.0\CSV_IMPORTER.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\obj\Debug\net8.0\CSV_IMPORTER.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\obj\Debug\net8.0\CSV_IMPORTER.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\obj\Debug\net8.0\CSV_IMPORTER.Infrastructure.AssemblyInfo.cs
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\obj\Debug\net8.0\CSV_IMPORTER.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\obj\Debug\net8.0\CSV_IMPO.D464E210.Up2Date
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\obj\Debug\net8.0\CSV_IMPORTER.Infrastructure.dll
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\obj\Debug\net8.0\refint\CSV_IMPORTER.Infrastructure.dll
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\obj\Debug\net8.0\CSV_IMPORTER.Infrastructure.pdb
+C:\Users\joaov\Desktop\PROJETOS_2026\CSV_IMPORTER\CSV_IMPORTER.Infrastructure\obj\Debug\net8.0\ref\CSV_IMPORTER.Infrastructure.dll
