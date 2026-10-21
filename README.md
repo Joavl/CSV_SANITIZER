@@ -1,132 +1,250 @@
-# CSV Sanitizer
+# Normalizador de Dados para Investigação
 
-Projeto para sanitização de arquivos CSV, com foco em preparar dados para uso em processos de análise, importação e integração.
+Mini projeto de validação e normalização de registros de ligações telefônicas em CSV, com exportação estruturada para importação no i2 Analyst’s Notebook.
 
-> Complete as seções indicadas entre colchetes conforme a implementação do projeto e remova esta observação antes de publicar.
+## Objetivo
 
-## Sobre o projeto
+Preparar registros de ligações telefônicas para apoiar análises de comunicação entre números de telefone.
 
-O CSV Sanitizer foi desenvolvido para [descrever o problema que o projeto resolve].
+O projeto atende ao cenário em que um analista recebe um arquivo CSV e precisa organizar os dados para visualizar:
 
-A aplicação recebe [descrever a entrada], aplica [descrever as regras de tratamento implementadas] e gera [descrever a saída].
+- Quem se comunica com quem.
+- Quando as ligações ocorreram.
+- Com que frequência os telefones se comunicam.
+- Qual a duração das ligações.
 
-## Funcionalidades
+## Escopo
 
-<!-- Liste somente os recursos implementados. -->
+Cada linha do arquivo de entrada representa uma tentativa de ligação entre um telefone de origem e um telefone de destino.
 
-- [Funcionalidade 1]
-- [Funcionalidade 2]
-- [Funcionalidade 3]
+O processamento deve validar os campos obrigatórios, rejeitar registros inválidos sem interromper a execução e exportar os registros aceitos em um CSV estruturado.
 
-## Tecnologias utilizadas
+Além da exportação, o sistema deve gerar um relatório com os resultados do processamento e os motivos das rejeições.
 
-- [Linguagem e versão]
-- [Bibliotecas ou frameworks]
-- [Outras dependências, se houver]
+## Requisitos funcionais
 
-## Pré-requisitos
+- Receber o caminho do CSV de entrada.
+- Receber o caminho do CSV de exportação.
+- Validar telefone de origem, telefone de destino, data/hora, duração e tipo da ligação.
+- Rejeitar registros inválidos sem interromper o processamento das demais linhas.
+- Gerar um relatório com:
+  - Total de registros lidos.
+  - Total de registros aceitos.
+  - Total de registros rejeitados.
+  - Motivo de cada rejeição.
+- Exportar somente as ligações válidas.
+- Representar cada ligação por meio de duas entidades do tipo telefone e um link do tipo ligação.
 
-Antes de executar o projeto, instale:
-
-- Git.
-- [Ambiente de execução e versão necessária].
-- [Outros requisitos, se houver].
-
-## Instalação
-
-1. Clone o repositório:
-
-   ```bash
-   git clone https://github.com/Joavl/CSV_SANITIZER.git
-   ```
-
-2. Acesse a pasta do projeto:
-
-   ```bash
-   cd CSV_SANITIZER
-   ```
-
-3. Instale as dependências:
-
-   ```text
-   [Inserir o comando de instalação das dependências]
-   ```
-
-## Como usar
-
-1. Prepare o arquivo CSV conforme os requisitos descritos abaixo.
-2. [Descrever como selecionar ou informar o arquivo de entrada].
-3. [Descrever como executar o processamento].
-4. [Informar onde o resultado é disponibilizado].
-
-### Execução
+## Fluxo de processamento
 
 ```text
-[Inserir o comando real de execução]
+Informação dos caminhos de entrada e saída
+                    |
+                    v
+           Leitura do CSV de entrada
+                    |
+                    v
+           Validação de cada registro
+                    |
+          +---------+---------+
+          |                   |
+          v                   v
+   Registro válido     Registro inválido
+          |                   |
+          v                   v
+ Preparação para       Registro do motivo
+    exportação            da rejeição
+          |                   |
+          +---------+---------+
+                    |
+                    v
+     Exportação das ligações válidas
+                    |
+                    v
+     Geração do relatório de processamento
 ```
 
-### Formato de entrada
+## Dados de entrada
 
-| Propriedade | Especificação |
+O usuário deve informar o caminho de um arquivo CSV em que cada linha represente uma tentativa de ligação.
+
+### Campos obrigatórios
+
+| Campo | Descrição |
 | --- | --- |
-| Extensão | `.csv` |
-| Codificação | [Informar as codificações aceitas] |
-| Delimitador | [Informar os delimitadores aceitos] |
-| Cabeçalho | [Informar se é obrigatório ou opcional] |
-| Colunas obrigatórias | [Listar ou indicar que não se aplica] |
+| Origem | Telefone que iniciou a tentativa de ligação. |
+| Destino | Telefone para o qual a ligação foi direcionada. |
+| Data/hora | Data e horário da tentativa de ligação. |
+| Duração | Duração registrada para a ligação. |
+| Tipo | Classificação da ligação. |
 
-## Regras de sanitização
+Os nomes físicos das colunas, os formatos de data/hora, a unidade de duração e os valores permitidos para o tipo devem seguir o contrato de dados adotado na implementação.
 
-[Descrever exatamente quais transformações o programa realiza.]
+## Validação dos registros
 
-| Regra | Comportamento |
+Cada registro deve ser validado antes de ser incluído no arquivo de exportação.
+
+| Campo | Validação requerida |
 | --- | --- |
-| [Nome da regra] | [Como os dados são tratados] |
-| [Nome da regra] | [Como os dados são tratados] |
+| Origem | Verificar se o telefone está preenchido e atende ao formato aceito pelo sistema. |
+| Destino | Verificar se o telefone está preenchido e atende ao formato aceito pelo sistema. |
+| Data/hora | Verificar se o valor representa uma data e um horário válidos no formato aceito. |
+| Duração | Verificar se o valor atende ao formato, à unidade e aos limites definidos pelo sistema. |
+| Tipo | Verificar se o valor corresponde a uma classificação aceita. |
 
-### Exemplo
+### Tratamento de registros inválidos
 
-Entrada:
+Quando um registro apresentar dados inválidos:
 
-```csv
-[Inserir um exemplo de CSV de entrada]
+1. O registro deve ser rejeitado.
+2. O motivo da rejeição deve ser registrado no relatório.
+3. O processamento deve continuar para os demais registros.
+4. O registro rejeitado não deve ser incluído no CSV de exportação.
+
+As regras específicas de normalização e os valores aceitos devem ser definidos na implementação. Os requisitos não estabelecem, por exemplo, códigos de país obrigatórios, duração mínima ou uma lista de tipos de ligação.
+
+## Modelo de dados para análise
+
+Cada ligação válida deve ser representada pelo seguinte relacionamento:
+
+```text
+[Telefone de origem] ─── Ligação ───> [Telefone de destino]
 ```
 
-Saída:
+### Entidades
 
-```csv
-[Inserir a saída correspondente ao processamento real]
+| Elemento | Tipo | Identificação |
+| --- | --- | --- |
+| Entidade de origem | Telefone | Número de origem. |
+| Entidade de destino | Telefone | Número de destino. |
+
+### Link
+
+| Elemento | Tipo | Descrição |
+| --- | --- | --- |
+| Relacionamento | Ligação | Tentativa de comunicação entre origem e destino. |
+
+### Propriedades da ligação
+
+| Propriedade | Descrição |
+| --- | --- |
+| Data/hora | Momento em que ocorreu a tentativa de ligação. |
+| Duração | Duração da ligação, conforme a unidade adotada pelo projeto. |
+| Tipo | Classificação da ligação. |
+| Direção | Sentido da ligação, da origem para o destino. |
+
+O telefone de origem e o telefone de destino devem permanecer distintos no mapeamento, preservando o sentido da comunicação.
+
+## CSV de exportação
+
+O arquivo de saída deve conter somente registros válidos e informações suficientes para mapear:
+
+- A entidade de origem como telefone.
+- A entidade de destino como telefone.
+- O relacionamento como ligação.
+- As propriedades de data/hora, duração, tipo e direção.
+
+### Estrutura lógica
+
+| Informação | Destino no modelo de análise |
+| --- | --- |
+| Telefone de origem | Identificador da entidade de origem. |
+| Telefone de destino | Identificador da entidade de destino. |
+| Ligação | Tipo do link entre as entidades. |
+| Data/hora | Propriedade do link. |
+| Duração | Propriedade do link. |
+| Tipo | Propriedade do link. |
+| Direção | Orientação do link entre origem e destino. |
+
+Essa estrutura descreve o conteúdo necessário à exportação. Os nomes definitivos das colunas e o respectivo mapeamento de importação devem acompanhar a implementação.
+
+## Relatório de processamento
+
+Ao final da execução, o sistema deve apresentar um resumo com os seguintes indicadores:
+
+| Indicador | Descrição |
+| --- | --- |
+| Total lido | Quantidade de registros processados do CSV de entrada. |
+| Total aceito | Quantidade de registros aprovados na validação. |
+| Total rejeitado | Quantidade de registros não aprovados. |
+
+Os totais devem respeitar a relação:
+
+```text
+Total lido = Total aceito + Total rejeitado
 ```
 
-## Arquivos gerados
+O relatório também deve informar o motivo de cada rejeição, permitindo identificar os problemas que precisam ser corrigidos na origem dos dados.
 
-- [Nome ou padrão do arquivo de saída].
-- [Diretório de destino].
-- [Relatório ou log, caso exista].
+### Exemplo ilustrativo
 
-## Limitações e cuidados
+```text
+RESUMO DO PROCESSAMENTO
 
-- [Informar limitações conhecidas].
-- [Informar se o arquivo original é preservado ou sobrescrito].
-- [Informar como valores vazios, registros inválidos e erros são tratados].
-- Evite incluir dados pessoais, credenciais ou informações confidenciais nos arquivos de exemplo publicados no repositório.
+Total lido:       100
+Total aceito:      92
+Total rejeitado:    8
 
-## Contribuição
+EXEMPLOS DE REJEIÇÃO
 
-Sugestões e melhorias são bem-vindas.
+Registro 12: telefone de origem ausente.
+Registro 27: data/hora inválida.
+Registro 43: duração em formato inválido.
+Registro 68: tipo de ligação não aceito.
+```
 
-Para contribuir:
+Os números e as mensagens acima são apenas ilustrativos.
 
-1. Abra uma issue descrevendo o problema ou a melhoria.
-2. Faça um fork do repositório.
-3. Crie uma branch para sua alteração.
-4. Implemente e teste as mudanças.
-5. Abra um pull request explicando o que foi alterado.
+## Como utilizar
 
-## Licença
+O fluxo de uso previsto é:
 
-[Informar a licença adotada e incluir o arquivo LICENSE correspondente. Remover esta seção caso ainda não tenha sido definida uma licença.]
+1. Disponibilizar o CSV com os registros de ligações.
+2. Informar o caminho do arquivo de entrada.
+3. Informar o caminho desejado para o CSV de exportação.
+4. Executar o processamento.
+5. Consultar o relatório de aceitação e rejeição.
+6. Utilizar o CSV exportado no fluxo de importação do i2 Analyst’s Notebook, mapeando as entidades, o link e suas propriedades.
+
+Os comandos de instalação e execução devem ser documentados conforme a tecnologia utilizada no projeto.
+
+## Critérios de aceitação
+
+- [ ] O usuário consegue informar os caminhos de entrada e exportação.
+- [ ] Cada linha de dados é tratada como uma tentativa de ligação.
+- [ ] Origem, destino, data/hora, duração e tipo são validados.
+- [ ] Registros inválidos são rejeitados individualmente.
+- [ ] Uma rejeição não interrompe o processamento das demais linhas.
+- [ ] O relatório informa os totais de registros lidos, aceitos e rejeitados.
+- [ ] Cada registro rejeitado possui um motivo registrado.
+- [ ] O CSV de exportação contém somente ligações válidas.
+- [ ] Cada ligação exportada permite identificar as entidades de origem e destino.
+- [ ] Cada ligação exportada contém data/hora, duração, tipo e direção.
+
+## Limites do escopo
+
+Os requisitos apresentados não definem:
+
+- Linguagem de programação ou bibliotecas.
+- Interface de uso: terminal, aplicação web ou interface gráfica.
+- Nomes exatos das colunas.
+- Codificação e delimitador dos arquivos CSV.
+- Formato e fuso horário dos campos de data/hora.
+- Unidade de medida da duração.
+- Tipos de ligação permitidos.
+- Regras para números nacionais e internacionais.
+- Tratamento de duplicidades.
+- Formato e local de armazenamento do relatório.
+- Configuração específica do mapeamento de importação no i2 Analyst’s Notebook.
+
+Essas decisões devem ser registradas conforme forem implementadas.
+
+## Cuidados com os dados
+
+Os arquivos utilizados no projeto podem conter informações sensíveis de comunicação.
+
+Para exemplos, demonstrações e testes publicados no repositório, utilize dados fictícios. Não inclua registros reais de ligações, números pessoais ou outros dados confidenciais.
 
 ## Autor
 
-Desenvolvido por [Joavl](https://github.com/Joavl).
+[Joavl](https://github.com/Joavl)
